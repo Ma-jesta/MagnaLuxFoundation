@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Magna Lux Foundation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#3B82F6',
+                        brandYellow: '#FDE047',
+                        brandDark: '#0F172A',
+                        brandLight: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+        }
+
+        .rotate-logo {
+            transform: rotate(-90deg);
+        }
+
+        .watermark-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 60vw;
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+            user-select: none;
+            filter: grayscale(100%);
+        }
+
+        /* Image Gallery Animations */
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-img {
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, transparent 70%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .gallery-item:hover .gallery-text {
+            transform: translateY(0);
+        }
+
+        footer {
+            position: relative;
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+
+    <img src="remove.bg logo.png" alt="" class="watermark-bg">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-nav border-b border-slate-100">
+        <div class="container mx-auto px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="remove.bg logo.png" alt="MagnaLux Logo"
+                    class="h-14 w-14 object-contain rotate-logo transition-transform duration-500 group-hover:scale-105">
+                <div class="flex flex-col justify-center border-l-2 border-brandBlue/20 pl-3">
+                    <span class="text-brandDark font-extrabold text-2xl tracking-tighter leading-none">MagnaLux</span>
+                    <span
+                        class="text-brandBlue font-bold text-[10px] uppercase tracking-[0.4em] mt-1 leading-none">Foundation</span>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="index.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Home</a>
+                <a href="about.html" class="text-slate-500 font-medium hover:text-brandBlue transition">About Us</a>
+                <a href="what-we-do.html" class="text-slate-500 font-medium hover:text-brandBlue transition">What We
+                    Do</a>
+                <a href="impact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Impact</a>
+                <a href="gallery.html"
+                    class="text-brandBlue font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandBlue">Gallery</a>
+                <a href="contact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Contact</a>
+                <a href="support.html"
+                    class="bg-brandBlue text-white px-7 py-3 rounded-full font-bold hover:bg-brandDark transition shadow-lg shadow-blue-100 transform hover:-translate-y-0.5">Support
+                    Us</a>
+            </div>
+            <button class="lg:hidden text-brandBlue text-2xl"><i class="fas fa-bars-staggered"></i></button>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-12 text-center">
+        <div class="container mx-auto px-6">
+            <h4 class="text-brandBlue font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Gallery</h4>
+            <h1 class="text-5xl md:text-6xl font-black font-serif text-brandDark mb-6">Moments of <span
+                    class="text-brandBlue italic">Transformation.</span></h1>
+        </div>
+    </section>
+
+    <section class="pb-24 px-6 lg:px-12 relative z-10">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <div class="gallery-item h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Outreach">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Outreach</span>
+                            <h3 class="text-white font-bold">SHS Gospel Outreach</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg lg:mt-8">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Donation">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Community</span>
+                            <h3 class="text-white font-bold">Odorkor Widows Support</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Worship">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Worship</span>
+                            <h3 class="text-white font-bold">Music Group Collaboration</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg lg:mt-8">
+                    <img src="https://images.unsplash.com/photo-1523240715632-d984bc4dd953?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Mentorship">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Education</span>
+                            <h3 class="text-white font-bold">Career Mentorship Session</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg lg:-mt-8">
+                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Fellowship">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Fellowship</span>
+                            <h3 class="text-white font-bold">JHS Weekly Devotionals</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Skills">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Skills</span>
+                            <h3 class="text-white font-bold">Digital Empowerment</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg lg:-mt-8">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Street">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Mission</span>
+                            <h3 class="text-white font-bold">Street Evangelism</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Joy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Love</span>
+                            <h3 class="text-white font-bold">Christmas Joy Mission</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Camp">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Growth</span>
+                            <h3 class="text-white font-bold">Youth Leadership Camp</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg lg:mt-8">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Worship Night">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span
+                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Worship</span>
+                            <h3 class="text-white font-bold">Greater Light Concert</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Bible Study">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Word</span>
+                            <h3 class="text-white font-bold">Word Engagement Session</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item h-80 shadow-lg lg:mt-8">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd9d7a91533b?auto=format&fit=crop&q=80"
+                        class="gallery-img" alt="Team">
+                    <div class="gallery-overlay">
+                        <div class="gallery-text">
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Family</span>
+                            <h3 class="text-white font-bold">MagnaLux Volunteers</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brandDark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="grid md:grid-cols-12 gap-12 mb-12 items-start">
+                <div class="md:col-span-5">
+                    <a href="index.html" class="flex items-center space-x-3 group mb-6">
+                        <img src="remove.bg logo.png" alt="MagnaLux Logo"
+                            class="h-10 w-10 object-contain rotate-logo brightness-110">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-black tracking-tighter leading-none">Magna<span
+                                    class="text-brandBlue italic">Lux</span></span>
+                            <span
+                                class="text-[9px] uppercase tracking-[0.4em] font-bold text-slate-400">Foundation</span>
+                        </div>
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm italic">
+                        "Raising a generation rooted in God’s Word and empowered to be the light of the world."
+                    </p>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="font-bold uppercase text-[10px] tracking-[0.2em] text-brandBlue mb-4">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="what-we-do.html" class="hover:text-white transition">What We Do</a></li>
+                        <li><a href="impact.html" class="hover:text-white transition">Impact</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-bold uppercase text-[10px] tracking-[0.2em] text-brandBlue mb-4">Connect With Us
+                    </h4>
+                    <div class="space-y-3">
+                        <a href="mailto:magnaluxfoundationmgt@gmail.com"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fas fa-envelope text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnaluxfoundationmgt@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fab fa-instagram text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnalux.foundation</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fab fa-tiktok text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnalux.foundation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500 text-[9px] font-bold tracking-[0.3em] uppercase">
+                    © 2026 Magna Lux Foundation. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) nav.classList.add('py-3', 'shadow-xl', 'bg-white/95');
+            else nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
+        });
+    </script>
+</body>
+
+</html>

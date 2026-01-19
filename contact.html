@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Magna Lux Foundation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#3B82F6',
+                        brandYellow: '#FDE047',
+                        brandDark: '#0F172A',
+                        brandLight: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+        }
+
+        .rotate-logo {
+            transform: rotate(-90deg);
+        }
+
+        .input-focus {
+            transition: all 0.3s ease;
+        }
+
+        .input-focus:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+            outline: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-nav border-b border-slate-100">
+        <div class="container mx-auto px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="remove.bg logo.png" alt="MagnaLux Logo"
+                    class="h-14 w-14 object-contain rotate-logo transition-transform duration-500 group-hover:scale-105">
+                <div class="flex flex-col justify-center border-l-2 border-brandBlue/20 pl-3">
+                    <span class="text-brandDark font-extrabold text-2xl tracking-tighter leading-none">MagnaLux</span>
+                    <span
+                        class="text-brandBlue font-bold text-[10px] uppercase tracking-[0.4em] mt-1 leading-none">Foundation</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="index.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Home</a>
+                <a href="about.html" class="text-slate-500 font-medium hover:text-brandBlue transition">About Us</a>
+                <a href="what-we-do.html" class="text-slate-500 font-medium hover:text-brandBlue transition">What We
+                    Do</a>
+                <a href="impact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Impact</a>
+                <a href="gallery.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Gallery</a>
+                <a href="contact.html"
+                    class="text-brandBlue font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandBlue">Contact</a>
+                <a href="support.html"
+                    class="bg-brandBlue text-white px-7 py-3 rounded-full font-bold hover:bg-brandDark transition shadow-lg shadow-blue-100 transform hover:-translate-y-0.5">Support
+                    Us</a>
+            </div>
+
+            <button class="lg:hidden text-brandBlue text-2xl"><i class="fas fa-bars-staggered"></i></button>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 bg-brandLight">
+        <div class="container mx-auto px-6 lg:px-12">
+            <h4 class="text-brandBlue font-bold uppercase tracking-[0.3em] text-xs mb-4">Get in Touch</h4>
+            <h1 class="text-5xl md:text-7xl font-black font-serif text-brandDark mb-8 leading-[1.1]">
+                Let’s Ignite the <span class="text-brandBlue italic">Light Together.</span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="py-24">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-16">
+
+                <div class="lg:col-span-5 space-y-12">
+                    <div>
+                        <h2 class="text-3xl font-bold font-serif text-brandDark mb-6">Connect With Our Team</h2>
+                        <p class="text-slate-500 leading-relaxed mb-8">
+                            Whether you want to volunteer, partner with us on a mission, or simply learn more about our
+                            Word-based programs, we are ready to hear from you.
+                        </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <a href="mailto:magnaluxfoundationmgt@gmail.com" class="flex items-center space-x-5 group">
+                            <div
+                                class="w-14 h-14 bg-blue-50 text-brandBlue flex items-center justify-center rounded-2xl group-hover:bg-brandBlue group-hover:text-white transition-all">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brandDark">Email Us</h4>
+                                <p class="text-slate-500 text-sm">magnaluxfoundationmgt@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-5 group">
+                            <div
+                                class="w-14 h-14 bg-yellow-50 text-yellow-600 flex items-center justify-center rounded-2xl group-hover:bg-brandYellow group-hover:text-brandDark transition-all">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brandDark">Instagram</h4>
+                                <p class="text-slate-500 text-sm">@magnalux.foundation</p>
+                            </div>
+                        </a>
+
+                        <a href="https://www.tiktok.com/@magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-5 group">
+                            <div
+                                class="w-14 h-14 bg-slate-50 text-brandDark flex items-center justify-center rounded-2xl group-hover:bg-brandDark group-hover:text-white transition-all">
+                                <i class="fab fa-tiktok text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brandDark">TikTok</h4>
+                                <p class="text-slate-500 text-sm">@magnalux.foundation</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div
+                        class="bg-white p-8 md:p-12 rounded-[40px] border border-slate-100 shadow-2xl shadow-slate-200/50">
+                        <form action="https://formspree.io/f/magnaluxfoundationmgt@gmail.com" method="POST"
+                            class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1">Full
+                                        Name</label>
+                                    <input type="text" name="name" required placeholder="Your Name"
+                                        class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 input-focus text-sm">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1">Email
+                                        Address</label>
+                                    <input type="email" name="email" required placeholder="your@email.com"
+                                        class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 input-focus text-sm">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1">Subject</label>
+                                <input type="text" name="subject" placeholder="Partnership, Volunteering, etc."
+                                    class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 input-focus text-sm">
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-xs font-bold uppercase tracking-widest text-slate-400 ml-1">Message</label>
+                                <textarea name="message" rows="5" required placeholder="How can we help you?"
+                                    class="w-full px-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 input-focus text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-brandBlue text-white font-bold py-5 rounded-2xl hover:bg-brandDark transition-all shadow-lg shadow-blue-100">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brandDark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="grid md:grid-cols-12 gap-12 mb-12 items-start">
+                <div class="md:col-span-5">
+                    <a href="index.html" class="flex items-center space-x-3 group mb-6">
+                        <img src="remove.bg logo.png" alt="MagnaLux Logo"
+                            class="h-10 w-10 object-contain rotate-logo brightness-110">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-black tracking-tighter leading-none">Magna<span
+                                    class="text-brandBlue italic">Lux</span></span>
+                            <span
+                                class="text-[9px] uppercase tracking-[0.4em] font-bold text-slate-400">Foundation</span>
+                        </div>
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm italic">
+                        "Raising a generation rooted in God’s Word and empowered to be the light of the world."
+                    </p>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="font-bold uppercase text-[10px] tracking-[0.2em] text-brandBlue mb-4">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="what-we-do.html" class="hover:text-white transition">What We Do</a></li>
+                        <li><a href="impact.html" class="hover:text-white transition">Impact</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-bold uppercase text-[10px] tracking-[0.2em] text-brandBlue mb-4">Connect With Us
+                    </h4>
+                    <div class="space-y-3">
+                        <a href="mailto:magnaluxfoundationmgt@gmail.com"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fas fa-envelope text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnaluxfoundationmgt@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fab fa-instagram text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnalux.foundation</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fab fa-tiktok text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnalux.foundation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500 text-[9px] font-bold tracking-[0.3em] uppercase">
+                    © 2026 Magna Lux Foundation. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                nav.classList.add('py-3', 'shadow-xl', 'bg-white/95');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
+                nav.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+
+</html>

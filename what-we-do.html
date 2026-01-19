@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Do | Magna Lux Foundation</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#3B82F6',
+                        brandYellow: '#FDE047',
+                        brandDark: '#0F172A',
+                        brandLight: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+        }
+
+        .rotate-logo {
+            transform: rotate(-90deg);
+        }
+
+        .watermark-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 60vw;
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+            user-select: none;
+            filter: grayscale(100%);
+        }
+
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.15);
+        }
+
+        footer {
+            position: relative;
+            z-index: 20;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+
+    <img src="remove.bg logo.png" alt="" class="watermark-bg">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-nav border-b border-slate-100">
+        <div class="container mx-auto px-6 lg:px-12 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <img src="remove.bg logo.png" alt="MagnaLux Logo"
+                    class="h-14 w-14 object-contain rotate-logo transition-transform duration-500 group-hover:scale-105">
+                <div class="flex flex-col justify-center border-l-2 border-brandBlue/20 pl-3">
+                    <span class="text-brandDark font-extrabold text-2xl tracking-tighter leading-none">MagnaLux</span>
+                    <span
+                        class="text-brandBlue font-bold text-[10px] uppercase tracking-[0.4em] mt-1 leading-none">Foundation</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center space-x-10">
+                <a href="index.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Home</a>
+                <a href="about.html" class="text-slate-500 font-medium hover:text-brandBlue transition">About Us</a>
+                <a href="what-we-do.html"
+                    class="text-brandBlue font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandBlue">What
+                    We Do</a>
+                <a href="impact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Impact</a>
+                <a href="gallery.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Gallery</a>
+                <a href="contact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Contact</a>
+                <a href="support.html"
+                    class="bg-brandBlue text-white px-7 py-3 rounded-full font-bold hover:bg-brandDark transition shadow-lg shadow-blue-100 transform hover:-translate-y-0.5">Support
+                    Us</a>
+            </div>
+
+            <button class="lg:hidden text-brandBlue text-2xl"><i class="fas fa-bars-staggered"></i></button>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20">
+        <div class="container mx-auto px-6 lg:px-12 text-center lg:text-left">
+            <h4 class="text-brandBlue font-bold uppercase tracking-[0.3em] text-xs mb-4">Our Operations</h4>
+            <h1 class="text-5xl md:text-7xl font-black font-serif text-brandDark mb-8 leading-[1.1]">
+                Equipping a <br><span class="text-brandBlue italic">Light-Bearing Generation.</span>
+            </h1>
+            <p class="text-xl text-slate-600 max-w-2xl font-light leading-relaxed">
+                Through intentional discipleship and capacity building, we root young people in God's Word and empower
+                them with the skills to lead and transform their worlds.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50/50 relative z-10">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-black font-serif text-brandDark">Programs & Activities</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 hover-lift border border-slate-100">
+                    <div class="w-14 h-14 bg-blue-50 text-brandBlue flex items-center justify-center rounded-2xl mb-8">
+                        <i class="fas fa-bible text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandDark mb-4">Weekly Gatherings</h3>
+                    <p class="text-slate-500 leading-relaxed">School-based devotional and worship sessions centered on
+                        Scripture to deepen Word engagement.</p>
+                </div>
+
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 hover-lift border border-slate-100">
+                    <div
+                        class="w-14 h-14 bg-yellow-50 text-yellow-600 flex items-center justify-center rounded-2xl mb-8">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandDark mb-4">Biblical Seminars</h3>
+                    <p class="text-slate-500 leading-relaxed">Gospel concerts and seminars designed to ignite a burning
+                        passion for Christ in schools.</p>
+                </div>
+
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 hover-lift border border-slate-100">
+                    <div class="w-14 h-14 bg-blue-50 text-brandBlue flex items-center justify-center rounded-2xl mb-8">
+                        <i class="fas fa-campground text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandDark mb-4">Spiritual Camps</h3>
+                    <p class="text-slate-500 leading-relaxed">Monthly retreats and camps for immersive spiritual growth
+                        and prayerful fellowship.</p>
+                </div>
+
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 hover-lift border border-slate-100">
+                    <div
+                        class="w-14 h-14 bg-yellow-50 text-yellow-600 flex items-center justify-center rounded-2xl mb-8">
+                        <i class="fas fa-laptop-code text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandDark mb-4">Practical Equipping</h3>
+                    <p class="text-slate-500 leading-relaxed">Empowering youth with vocational and digital skills to
+                        thrive in life and ministry.</p>
+                </div>
+
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 hover-lift border border-slate-100">
+                    <div class="w-14 h-14 bg-blue-50 text-brandBlue flex items-center justify-center rounded-2xl mb-8">
+                        <i class="fas fa-user-tie text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandDark mb-4">Kingdom Mentorship</h3>
+                    <p class="text-slate-500 leading-relaxed">Career guidance that integrates faith and profession,
+                        offering godly counsel to students.</p>
+                </div>
+
+                <div
+                    class="bg-white p-10 rounded-[40px] shadow-xl shadow-slate-200/50 hover-lift border border-slate-100">
+                    <div
+                        class="w-14 h-14 bg-yellow-50 text-yellow-600 flex items-center justify-center rounded-2xl mb-8">
+                        <i class="fas fa-share-nodes text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-brandDark mb-4">Soul-Winning</h3>
+                    <p class="text-slate-500 leading-relaxed">Evangelism outreaches to reach schools and communities
+                        with the light of God's Word.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 relative z-10">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-black font-serif text-brandDark mb-8">Who We Serve</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-5">
+                            <div class="mt-1 text-brandBlue font-bold text-xl italic">01.</div>
+                            <div>
+                                <h4 class="font-bold text-brandDark text-xl">Junior High School</h4>
+                                <p class="text-slate-500 mt-2">Reaching students during their formative years through
+                                    Bible-centered teachings and foundation skills.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-5 border-t border-slate-100 pt-8">
+                            <div class="mt-1 text-brandBlue font-bold text-xl italic">02.</div>
+                            <div>
+                                <h4 class="font-bold text-brandDark text-xl">Senior High School</h4>
+                                <p class="text-slate-500 mt-2">Establishing Word-based fellowships and deep discipleship
+                                    groups for spiritual stability.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-5 border-t border-slate-100 pt-8">
+                            <div class="mt-1 text-brandBlue font-bold text-xl italic">03.</div>
+                            <div>
+                                <h4 class="font-bold text-brandDark text-xl">Tertiary & Community</h4>
+                                <p class="text-slate-500 mt-2">Preparing young adults for leadership in their fields and
+                                    reaching out to orphanages and the vulnerable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1523240715632-d984bc4dd953?auto=format&fit=crop&q=80"
+                        class="rounded-[40px] shadow-2xl" alt="Students Studying">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-brandDark text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="grid md:grid-cols-12 gap-12 mb-12 items-start">
+                <div class="md:col-span-5">
+                    <a href="index.html" class="flex items-center space-x-3 group mb-6">
+                        <img src="remove.bg logo.png" alt="MagnaLux Logo"
+                            class="h-10 w-10 object-contain rotate-logo brightness-110">
+                        <div class="flex flex-col">
+                            <span class="text-2xl font-black tracking-tighter leading-none">Magna<span
+                                    class="text-brandBlue italic">Lux</span></span>
+                            <span
+                                class="text-[9px] uppercase tracking-[0.4em] font-bold text-slate-400">Foundation</span>
+                        </div>
+                    </a>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm italic">
+                        "Raising a generation rooted in God’s Word and empowered to be the light of the world."
+                    </p>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="font-bold uppercase text-[10px] tracking-[0.2em] text-brandBlue mb-4">Quick Links</h4>
+                    <ul class="space-y-3 text-slate-400 text-sm font-medium">
+                        <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="what-we-do.html" class="hover:text-white transition">What We Do</a></li>
+                        <li><a href="impact.html" class="hover:text-white transition">Impact</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-bold uppercase text-[10px] tracking-[0.2em] text-brandBlue mb-4">Connect With Us
+                    </h4>
+                    <div class="space-y-3">
+                        <a href="mailto:magnaluxfoundationmgt@gmail.com"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fas fa-envelope text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnaluxfoundationmgt@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fab fa-instagram text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnalux.foundation</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@magnalux.foundation" target="_blank"
+                            class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
+                            <i class="fab fa-tiktok text-brandBlue group-hover:scale-110 transition"></i>
+                            <span class="text-sm">magnalux.foundation</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500 text-[9px] font-bold tracking-[0.3em] uppercase">
+                    © 2026 Magna Lux Foundation. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                nav.classList.add('py-3', 'shadow-xl', 'bg-white/95');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
+                nav.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+
+</html>
