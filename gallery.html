@@ -54,6 +54,16 @@
             filter: grayscale(100%);
         }
 
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+
         /* Image Gallery Animations */
         .gallery-item {
             overflow: hidden;
@@ -105,7 +115,7 @@
     </style>
 </head>
 
-<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50 overflow-x-hidden">
 
     <img src="remove.bg logo.png" alt="" class="watermark-bg">
 
@@ -120,6 +130,7 @@
                         class="text-brandBlue font-bold text-[10px] uppercase tracking-[0.4em] mt-1 leading-none">Foundation</span>
                 </div>
             </a>
+
             <div class="hidden lg:flex items-center space-x-10">
                 <a href="index.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Home</a>
                 <a href="about.html" class="text-slate-500 font-medium hover:text-brandBlue transition">About Us</a>
@@ -133,9 +144,34 @@
                     class="bg-brandBlue text-white px-7 py-3 rounded-full font-bold hover:bg-brandDark transition shadow-lg shadow-blue-100 transform hover:-translate-y-0.5">Support
                     Us</a>
             </div>
-            <button class="lg:hidden text-brandBlue text-2xl"><i class="fas fa-bars-staggered"></i></button>
+
+            <button id="menu-btn" class="lg:hidden text-brandBlue text-2xl focus:outline-none">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full max-w-xs bg-brandDark z-[60] flex flex-col p-8 lg:hidden shadow-2xl">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-white font-black text-xl tracking-tighter">MagnaLux</span>
+            <button id="close-btn" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 text-left">
+            <a href="index.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Home</a>
+            <a href="about.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">About Us</a>
+            <a href="what-we-do.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">What We
+                Do</a>
+            <a href="impact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Impact</a>
+            <a href="gallery.html" class="text-brandBlue text-2xl font-bold">Gallery</a>
+            <a href="contact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Contact</a>
+            <div class="pt-6">
+                <a href="support.html"
+                    class="inline-block bg-brandBlue text-white px-8 py-4 rounded-full font-bold w-full text-center">Support
+                    Us</a>
+            </div>
+        </div>
+    </div>
 
     <section class="pt-40 pb-12 text-center">
         <div class="container mx-auto px-6">
@@ -150,8 +186,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
 
                 <div class="gallery-item h-80 shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Outreach">
+                    <img src="outreach worship 1.jpeg" class="gallery-img" alt="Outreach">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span
@@ -162,8 +197,7 @@
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg lg:mt-8">
-                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Donation">
+                    <img src="donation 6.jpeg" class="gallery-img" alt="Donation">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span
@@ -174,8 +208,7 @@
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Worship">
+                    <img src="collabo.jpeg" class="gallery-img" alt="Worship">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span
@@ -186,25 +219,23 @@
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg lg:mt-8">
-                    <img src="https://images.unsplash.com/photo-1523240715632-d984bc4dd953?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Mentorship">
+                    <img src="thankyou MLF.jpeg" class="gallery-img" alt="Mentorship">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
-                            <span
-                                class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Education</span>
-                            <h3 class="text-white font-bold">Career Mentorship Session</h3>
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Appreciation
+                                post</span>
+                            <h3 class="text-white font-bold">Donation exercise</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg lg:-mt-8">
-                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Fellowship">
+                    <img src="group discussion.jpg" class="gallery-img" alt="Fellowship">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span
                                 class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Fellowship</span>
-                            <h3 class="text-white font-bold">JHS Weekly Devotionals</h3>
+                            <h3 class="text-white font-bold">Fellowship through Word study</h3>
                         </div>
                     </div>
                 </div>
@@ -221,42 +252,39 @@
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg lg:-mt-8">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Street">
+                    <img src="tracts.jpeg" class="gallery-img" alt="Street">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span
                                 class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Mission</span>
-                            <h3 class="text-white font-bold">Street Evangelism</h3>
+                            <h3 class="text-white font-bold">Distribution of Christian tracts</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Joy">
+                    <img src="donation 2.jpeg" class="gallery-img" alt="Joy">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
-                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Love</span>
+                            <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Spreading
+                                Love</span>
                             <h3 class="text-white font-bold">Christmas Joy Mission</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Camp">
+                    <img src="my logo 3.png" class="gallery-img" alt="Camp">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Growth</span>
-                            <h3 class="text-white font-bold">Youth Leadership Camp</h3>
+                            <h3 class="text-white font-bold">MagnaLux Foundation</h3>
                         </div>
                     </div>
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg lg:mt-8">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Worship Night">
+                    <img src="band.jpeg" class="gallery-img" alt="Worship Night">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span
@@ -278,8 +306,7 @@
                 </div>
 
                 <div class="gallery-item h-80 shadow-lg lg:mt-8">
-                    <img src="https://images.unsplash.com/photo-1559027615-cd9d7a91533b?auto=format&fit=crop&q=80"
-                        class="gallery-img" alt="Team">
+                    <img src="volunteers.jpeg" class="gallery-img" alt="Team">
                     <div class="gallery-overlay">
                         <div class="gallery-text">
                             <span class="text-brandYellow text-[10px] font-bold uppercase tracking-widest">Family</span>
@@ -353,10 +380,31 @@
     </footer>
 
     <script>
+        // Navbar Scroll Effect
         const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 80) nav.classList.add('py-3', 'shadow-xl', 'bg-white/95');
-            else nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
+            if (window.scrollY > 80) {
+                nav.classList.add('py-3', 'shadow-xl', 'bg-white/95');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
+                nav.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     </script>
 </body>

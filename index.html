@@ -66,10 +66,20 @@
             background: #3B82F6;
             border-radius: 10px;
         }
+
+        /* Mobile Menu Sidebar Styles */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
     </style>
 </head>
 
-<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50 overflow-x-hidden">
 
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-nav border-b border-slate-100">
         <div class="container mx-auto px-6 lg:px-12 py-3 flex justify-between items-center">
@@ -97,11 +107,33 @@
                     Us</a>
             </div>
 
-            <button class="lg:hidden text-brandBlue text-2xl">
+            <button id="menu-btn" class="lg:hidden text-brandBlue text-2xl focus:outline-none">
                 <i class="fas fa-bars-staggered"></i>
             </button>
         </div>
     </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full max-w-xs bg-brandDark z-[60] flex flex-col p-8 lg:hidden shadow-2xl">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-white font-black text-xl tracking-tighter">MagnaLux</span>
+            <button id="close-btn" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 text-left">
+            <a href="index.html" class="text-brandBlue text-2xl font-bold">Home</a>
+            <a href="about.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">About Us</a>
+            <a href="what-we-do.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">What We
+                Do</a>
+            <a href="impact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Impact</a>
+            <a href="gallery.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Gallery</a>
+            <a href="contact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Contact</a>
+            <div class="pt-6">
+                <a href="support.html"
+                    class="inline-block bg-brandBlue text-white px-8 py-4 rounded-full font-bold w-full text-center">Support
+                    Us</a>
+            </div>
+        </div>
+    </div>
 
     <header class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
@@ -241,7 +273,7 @@
                     <div class="grid grid-cols-2 gap-4">
                         <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80"
                             class="rounded-[30px] shadow-lg mt-8" alt="Students">
-                        <img src="https://images.unsplash.com/photo-1523240715632-d984bc4dd953?auto=format&fit=crop&q=80"
+                        <img src="https://img.freepik.com/free-photo/close-up-people-learning-together-office_23-2149300718.jpg?semt=ais_hybrid&w=740&q=80"
                             class="rounded-[30px] shadow-lg" alt="Mentorship">
                     </div>
                 </div>
@@ -310,6 +342,7 @@
     </footer>
 
     <script>
+        // Navbar Scroll Effect
         const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
@@ -317,6 +350,30 @@
             } else {
                 nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
             }
+        });
+
+        // Hamburger Menu Controls
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop background scrolling
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Enable scrolling again
+        });
+
+        // Auto-close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
         });
     </script>
 </body>

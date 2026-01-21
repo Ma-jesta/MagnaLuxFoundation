@@ -53,6 +53,16 @@
             filter: grayscale(100%);
         }
 
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+
         .hover-lift {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -64,7 +74,7 @@
     </style>
 </head>
 
-<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50 overflow-x-hidden">
 
     <img src="remove.bg logo.png" alt="" class="watermark-bg">
 
@@ -79,6 +89,7 @@
                         class="text-brandBlue font-bold text-[10px] uppercase tracking-[0.4em] mt-1 leading-none">Foundation</span>
                 </div>
             </a>
+
             <div class="hidden lg:flex items-center space-x-10">
                 <a href="index.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Home</a>
                 <a href="about.html" class="text-slate-500 font-medium hover:text-brandBlue transition">About Us</a>
@@ -91,9 +102,34 @@
                     class="text-brandBlue font-bold relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-brandBlue">Support
                     Us</a>
             </div>
-            <button class="lg:hidden text-brandBlue text-2xl"><i class="fas fa-bars-staggered"></i></button>
+
+            <button id="menu-btn" class="lg:hidden text-brandBlue text-2xl focus:outline-none">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full max-w-xs bg-brandDark z-[60] flex flex-col p-8 lg:hidden shadow-2xl">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-white font-black text-xl tracking-tighter">MagnaLux</span>
+            <button id="close-btn" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 text-left">
+            <a href="index.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Home</a>
+            <a href="about.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">About Us</a>
+            <a href="what-we-do.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">What We
+                Do</a>
+            <a href="impact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Impact</a>
+            <a href="gallery.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Gallery</a>
+            <a href="contact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Contact</a>
+            <div class="pt-6">
+                <a href="support.html"
+                    class="inline-block bg-brandBlue text-white px-8 py-4 rounded-full font-bold w-full text-center">Support
+                    Us</a>
+            </div>
+        </div>
+    </div>
 
     <section class="pt-40 pb-20">
         <div class="container mx-auto px-6 lg:px-12 text-center">
@@ -120,16 +156,7 @@
                     <p class="text-slate-500 mb-8 leading-relaxed">Directly fund school outreaches, Bibles for students,
                         and spiritual retreats.</p>
                     <div class="space-y-4 mb-8 mt-auto">
-                        <div
-                            class="p-4 border border-slate-100 rounded-2xl flex justify-between items-center hover:border-brandBlue/30 transition">
-                            <span class="font-bold text-brandDark">GH₵ 100</span>
-                            <span class="text-xs text-slate-400 italic">5 Student Bibles</span>
-                        </div>
-                        <div
-                            class="p-4 border border-brandBlue bg-blue-50 rounded-2xl flex justify-between items-center">
-                            <span class="font-bold text-brandBlue">GH₵ 500</span>
-                            <span class="text-xs text-brandBlue/70 italic">One School Outreach</span>
-                        </div>
+
                     </div>
                     <a href="contact.html"
                         class="block text-center bg-brandBlue text-white font-bold py-4 rounded-full hover:bg-brandDark transition shadow-lg shadow-blue-100">Get
@@ -274,6 +301,7 @@
     </footer>
 
     <script>
+        // Navbar scroll logic
         const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
@@ -283,6 +311,21 @@
                 nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
                 nav.classList.add('py-4');
             }
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     </script>
 </body>

@@ -62,10 +62,20 @@
             background: #3B82F6;
             border-radius: 10px;
         }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
     </style>
 </head>
 
-<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50">
+<body class="bg-white text-slate-900 font-sans selection:bg-brandYellow/50 overflow-x-hidden">
 
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 glass-nav border-b border-slate-100">
         <div class="container mx-auto px-6 lg:px-12 py-3 flex justify-between items-center">
@@ -88,18 +98,39 @@
                     Do</a>
                 <a href="impact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Impact</a>
                 <a href="gallery.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Gallery</a>
-                <a href="events.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Events</a>
                 <a href="contact.html" class="text-slate-500 font-medium hover:text-brandBlue transition">Contact</a>
                 <a href="support.html"
                     class="bg-brandBlue text-white px-7 py-3 rounded-full font-bold hover:bg-brandDark transition shadow-lg shadow-blue-100 transform hover:-translate-y-0.5">Support
                     Us</a>
             </div>
 
-            <button class="lg:hidden text-brandBlue text-2xl">
+            <button id="menu-btn" class="lg:hidden text-brandBlue text-2xl focus:outline-none">
                 <i class="fas fa-bars-staggered"></i>
             </button>
         </div>
     </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full max-w-xs bg-brandDark z-[60] flex flex-col p-8 lg:hidden shadow-2xl">
+        <div class="flex justify-between items-center mb-12">
+            <span class="text-white font-black text-xl tracking-tighter">MagnaLux</span>
+            <button id="close-btn" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-6 text-left">
+            <a href="index.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Home</a>
+            <a href="about.html" class="text-brandBlue text-2xl font-bold">About Us</a>
+            <a href="what-we-do.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">What We
+                Do</a>
+            <a href="impact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Impact</a>
+            <a href="gallery.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Gallery</a>
+            <a href="contact.html" class="text-white text-2xl font-bold hover:text-brandBlue transition">Contact</a>
+            <div class="pt-6">
+                <a href="support.html"
+                    class="inline-block bg-brandBlue text-white px-8 py-4 rounded-full font-bold w-full text-center">Support
+                    Us</a>
+            </div>
+        </div>
+    </div>
 
     <section class="pt-40 pb-20 bg-brandLight">
         <div class="container mx-auto px-6 lg:px-12">
@@ -176,7 +207,6 @@
                 <div class="p-8 border border-slate-800 rounded-3xl hover:bg-slate-800/50 transition">
                     <i class="fas fa-calendar-star text-brandBlue text-3xl mb-6"></i>
                     <h4 class="text-xl font-bold mb-3">Spiritual Events</h4>
-                    <h4 class="text-xl font-bold mb-3">Events</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">Igniting passion for Christ through gospel
                         concerts, retreats, and biblical seminars.</p>
                 </div>
@@ -191,42 +221,6 @@
                     <h4 class="text-xl font-bold mb-3">Mentorship</h4>
                     <p class="text-slate-400 text-sm leading-relaxed">Offering godly counsel and career guidance that
                         integrates faith and profession.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 lg:px-12">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <div class="lg:w-1/2">
-                    <h2 class="text-4xl font-black font-serif text-brandDark mb-8">Greater Light for Every Stage</h2>
-                    <div class="space-y-6">
-                        <div class="flex items-center space-x-6 p-6 rounded-3xl hover:bg-brandLight transition group">
-                            <div
-                                class="w-12 h-12 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center font-bold">
-                                1</div>
-                            <p class="text-slate-600 font-medium">Junior High School Students (Scripture & Foundations)
-                            </p>
-                        </div>
-                        <div class="flex items-center space-x-6 p-6 rounded-3xl hover:bg-brandLight transition group">
-                            <div
-                                class="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold">
-                                2</div>
-                            <p class="text-slate-600 font-medium">Senior High School Students (Fellowship &
-                                Discipleship)</p>
-                        </div>
-                        <div class="flex items-center space-x-6 p-6 rounded-3xl hover:bg-brandLight transition group">
-                            <div
-                                class="w-12 h-12 rounded-full bg-blue-100 text-brandBlue flex items-center justify-center font-bold">
-                                3</div>
-                            <p class="text-slate-600 font-medium">Tertiary Students (Leadership & Profession)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&q=80"
-                        class="rounded-[40px] shadow-xl" alt="Students Learning">
                 </div>
             </div>
         </div>
@@ -270,12 +264,12 @@
                             <i class="fas fa-envelope text-brandBlue group-hover:scale-110 transition"></i>
                             <span class="text-sm">magnaluxfoundationmgt@gmail.com</span>
                         </a>
-                        <a href="#"
+                        <a href="https://www.instagram.com/magnalux.foundation" target="_blank"
                             class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
                             <i class="fab fa-instagram text-brandBlue group-hover:scale-110 transition"></i>
                             <span class="text-sm">magnalux.foundation</span>
                         </a>
-                        <a href="#"
+                        <a href="https://www.tiktok.com/@magnalux.foundation" target="_blank"
                             class="flex items-center space-x-3 text-slate-400 hover:text-white transition group">
                             <i class="fab fa-tiktok text-brandBlue group-hover:scale-110 transition"></i>
                             <span class="text-sm">magnalux.foundation</span>
@@ -293,15 +287,29 @@
     </footer>
 
     <script>
+        // Navbar Scroll
         const nav = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
                 nav.classList.add('py-3', 'shadow-xl', 'bg-white/95');
-                nav.classList.remove('py-4');
             } else {
                 nav.classList.remove('py-3', 'shadow-xl', 'bg-white/95');
-                nav.classList.add('py-4');
             }
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     </script>
 </body>
